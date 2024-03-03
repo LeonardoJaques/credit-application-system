@@ -9,12 +9,13 @@ import org.springframework.stereotype.Service
 class CustomerService(
     private val customerRepository: CustomerRepository,
 ) : ICustomerService {
-    override fun save(customer: Customer): Customer = customerRepository.save(customer)
+    override fun save(customer: Customer): Customer = this.customerRepository.save(customer)
 
-    override fun findById(id: Long): Customer = customerRepository.findById(id).orElseThrow {
+    override fun findById(id: Long): Customer = this.customerRepository.findById(id).orElseThrow {
         throw RuntimeException("$id not found!")
     }
 
-    override fun delete(id: Long) = customerRepository.deleteById(id)
+    override fun delete(id: Long) = this.customerRepository.deleteById(id)
+    
 
 }
