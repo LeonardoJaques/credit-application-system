@@ -15,3 +15,13 @@ spring:
         settings:
           trace: false
           web-allow-others: false
+  SpringSource:
+    version: 0.0.1
+    title: Credit Application System
+    description: Credit Application System
+    contact:
+      name: Leonardo Jaques
+      email: leonardo@jaquesprojetos.com.br
+    swagger-ui:
+        enabled: true
+        path: /swagger-ui.html

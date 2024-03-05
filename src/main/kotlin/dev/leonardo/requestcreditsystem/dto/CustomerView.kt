@@ -10,14 +10,16 @@ data class CustomerView(
     val email: String,
     val zipCode: String,
     val street: String,
-){
-    constructor(customer: Customer): this(
-       firstName = customer.firstName,
-       lastName = customer.lastName,
-       email = customer.email,
-       cpf = customer.cpf,
-       income = customer.income.toString(),
-       zipCode = customer.address.zipCode,
-       street = customer.address.street,
+    val id: Long?,
+) {
+    constructor(customer: Customer) : this(
+        firstName = customer.firstName,
+        lastName = customer.lastName,
+        email = customer.email,
+        cpf = customer.cpf,
+        income = customer.income.toString(),
+        zipCode = customer.address.zipCode,
+        street = customer.address.street,
+        id = customer.id
     )
 }

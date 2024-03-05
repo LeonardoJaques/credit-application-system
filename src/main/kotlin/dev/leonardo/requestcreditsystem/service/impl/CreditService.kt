@@ -22,7 +22,7 @@ class CreditService(
     }
 
     override fun findAllByCustomerId(customerId: Long): List<Credit> =
-        creditRepository.finAllVByCustomerId(customerId)
+        creditRepository.findAllVByCustomerId(customerId)
 
     override fun findByCreditCode(customerId: Long, creditCode: UUID): Credit {
         val credit = (creditRepository.findByCreditCode(creditCode)
@@ -32,7 +32,9 @@ class CreditService(
     }
 
     private fun validDayFirstInstallment(dayFirstInstallment: LocalDate): Boolean {
-        return if (dayFirstInstallment.isBefore(LocalDate.now().plusMonths(3))) true
+        return if (dayFirstInstallment.isBefore(
+                LocalDate.now().plusMonths(3)
+         )) true
         else throw BusinessException("Invalid Date")
     }
 }
